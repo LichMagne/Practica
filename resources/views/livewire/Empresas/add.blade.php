@@ -6,7 +6,7 @@
                 <button type="button"  class="btn-close btn-close-whit" data-bs-dismiss="modal"  aria-label="Close"> </button>
             </div>
            <div class="modal-body">
-                <form wire:submit.prevent="storeEmpresa">
+                <form wire:submit.prevent="store">
                     <div class="form-group">
                         <input hidden type="text" class="form-control" id="id_empresa"  wire:model="id_empresa">
                     </div>

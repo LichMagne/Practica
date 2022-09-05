@@ -8,7 +8,7 @@
                     Producto</button>
                 @include('livewire.Products.add')
 
-
+<hr>
                 <table class="table">
                     <thead>
                         <tr>
@@ -30,9 +30,12 @@
                                 <td>
                                     <i></i>
                                     {{-- <a class="btn btn-info" href="{{route('edit',$p->id)}}">Editar</a> --}}
+                                    @can('deleted_product')
                                     <button type="button" wire:wait data-bs-toggle="modal" data-bs-target="#messageModal" wire:click='destroy({{ $p->id }})'
                                         class="btn btn-danger btn-md"><i class="bi bi-trash"></i></button>
-
+                                        @else
+                                        No puedes eliminar productos
+                                        @endcan
                                         <button type="button" wire:wait  data-bs-toggle="modal" data-bs-target="#createModal" wire:click='editar({{ $p->id }})'
                                             class="btn btn-info btn-md"><i class="bi bi-pencil-square"></i></button>
                                 </td>
