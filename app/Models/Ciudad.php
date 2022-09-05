@@ -14,4 +14,11 @@ class Ciudad extends Model
         'ciudad_nombre',
         'pais_id',
     ];
+
+
+    public function pais(){
+
+        return $this->hasOne(Paises::class, 'id','pais_id');
+    }
+    
 }
